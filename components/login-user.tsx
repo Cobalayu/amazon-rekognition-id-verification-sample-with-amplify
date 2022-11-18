@@ -146,7 +146,6 @@ export const LoginUser = (props: DashboardProps) => {
                             <LoginSummaryRow header="DOB" value={state.DOB}/>
                             <LoginSummaryRow header="Registration status" value={state.RegistrationStatus}/>
                             <LoginSummaryRow header="Face Id" value={state.FaceId}/>
-                            <LoginSummaryRow header="Confidence" value={state.Confidence.toString()}/>
                         </tbody>
                     </table>
                 </div>
