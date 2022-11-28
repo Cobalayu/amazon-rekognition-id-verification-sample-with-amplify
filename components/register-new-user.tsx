@@ -47,6 +47,9 @@ interface RegFieldsProps {
 
 const initialProps = { screenshot: '', userid: '', firstname: '', lastname: '', dob: '1999-01-01', busy: false, status: 'initial', alertMessage: ''  };
 
+const FACING_MODE_USER = "user";
+const FACING_MODE_ENVIRONMENT = "environment";
+
 function reducer(state: RegNewUserProps, action: RegUserAction) {
     switch(action.type) {
         case 'userid':
@@ -256,7 +259,7 @@ export const RegisterNewUser = (props: DashboardProps) => {
     const videoConstraints = {
         width: 300,
         height: 169,
-        facingMode: "user"
+        facingMode: FACING_MODE_ENVIRONMENT
     };
 
     const [state, dispatch] = useReducer(reducer, initialProps);
@@ -295,6 +298,16 @@ export const RegisterNewUser = (props: DashboardProps) => {
         userProps: state,
         resetFunc: () => dispatch({ type: 'reset', payload: '' })
     }
+
+    const [facingMode, setFacingMode] = useState(FACING_MODE_ENVIRONMENT);
+    const switchCam = useCallback(() => {
+        setFacingMode(
+          prevState =>
+            prevState === FACING_MODE_ENVIRONMENT
+              ? FACING_MODE_USER
+              : FACING_MODE_ENVIRONMENT
+        );
+    }, []);
 
     return (
         <div>
@@ -341,9 +354,12 @@ export const RegisterNewUser = (props: DashboardProps) => {
                 <button
                 className={`btn btn-primary ${state.busy ? "disabled" : ""}`}
                 onClick={() => submitUser(state, dispatch)}>
-                {state.busy ? 'Please wait...': 'Register'}
+                {state.busy ? 'Please wait...': 'Registrar'}
             </button>
             </div>
+            <div>
+                <button onClick={switchCam}>Canviar Càmera</button>            
+            </div>            
             <SubmissionSummary {...submissionSummaryProps} />
         </div>
     );

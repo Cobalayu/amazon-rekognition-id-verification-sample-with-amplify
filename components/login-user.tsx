@@ -114,7 +114,7 @@ export const LoginUser = (props: DashboardProps) => {
     );
 
     const [facingMode, setFacingMode] = useState(FACING_MODE_ENVIRONMENT);
-    const handleClick = useCallback(() => {
+    const switchCam = useCallback(() => {
         setFacingMode(
           prevState =>
             prevState === FACING_MODE_ENVIRONMENT
@@ -146,7 +146,7 @@ export const LoginUser = (props: DashboardProps) => {
                 </button>
             </div>
             <div>
-                <button onClick={handleClick}>Canviar Càmera</button>            
+                <button onClick={switchCam}>Canviar Càmera</button>            
             </div>
             <div className={`${state.Success ? "d-none" : "d-block"}`}>
                 <h2 className="text-danger">Login failed</h2>
