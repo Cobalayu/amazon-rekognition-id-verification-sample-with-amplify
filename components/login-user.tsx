@@ -132,7 +132,10 @@ export const LoginUser = (props: DashboardProps) => {
                     ref={webcamRef}
                     screenshotFormat="image/jpeg"
                     width={videoConstraints.width}
-                    videoConstraints={videoConstraints}
+                    videoConstraints={{
+                        ...videoConstraints,
+                        facingMode
+                    }}
                 />
             </div>
             <div style={{ marginTop: 10 }}>

@@ -241,14 +241,12 @@ const RegistrationFields = (iProps: RegFieldsProps) => {
     return (
         <div>
             <div className="mb-3">
-                <label className="form-label">User Id</label>
+                <label className="form-label">Id Usuari</label>
                 <input type="text" className="form-control" id="userid" value={props.userid} onChange={(e) => dispatch({type: 'userid', payload: e.target.value})} />
-                <label className="form-label">First name</label>
+                <label className="form-label">Nom</label>
                 <input type="text" className="form-control" id="firstname" value={props.firstname} onChange={(e) => dispatch({type: 'firstname', payload: e.target.value})} />
-                <label className="form-label">Last name</label>
+                <label className="form-label">Cognom</label>
                 <input type="text" className="form-control" id="lastname" value={props.lastname} onChange={(e) => dispatch({type: 'lastname', payload: e.target.value})} />
-                <label className="form-label">Date of birth</label>
-                <input type="text" className="form-control" id="dob" value={props.dob} onChange={(e) => dispatch({type: 'dob', payload: e.target.value})} />
             </div>
         </div>
     )
