@@ -11,7 +11,7 @@ Amplify.configure({ ...awsExports, ssr: true });
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const SSR = withSSRContext(context);
 
-  var myProps: PageProps = { username: '', pageHeading: 'Register new user' };
+  var myProps: PageProps = { username: '', pageHeading: 'Registar nou usuari' };
 
   try {
     const user = await SSR.Auth.currentAuthenticatedUser();

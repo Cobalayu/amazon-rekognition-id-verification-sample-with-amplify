@@ -126,6 +126,7 @@ export const LoginUser = (props: DashboardProps) => {
     return (
         <div>
             <div>
+                <button onClick={handleClick}>Canviar Càmera</button>
                 <Webcam
                     audio={false}
                     height={videoConstraints.height}
