@@ -128,7 +128,7 @@ export const LoginUser = (props: DashboardProps) => {
                 <button
                     className={`btn btn-primary ${state.Busy ? "disabled" : ""}`}
                     onClick={capture}>
-                    {state.Busy ? 'Please wait...': 'Login'}
+                    {state.Busy ? 'Espereu...': 'Login'}
                 </button>
             </div>
             <div className={`${state.Success ? "d-none" : "d-block"}`}>
@@ -144,12 +144,11 @@ export const LoginUser = (props: DashboardProps) => {
                     <table className="table table-bordered" style={{marginTop: 10}}>
                         <tbody>
                             <LoginSummaryRow header="User Id" value={state.UserId}/>
-                            <LoginSummaryRow header="First name" value={state.FirstName}/>
-                            <LoginSummaryRow header="Last name" value={state.LastName}/>
-                            <LoginSummaryRow header="DOB" value={state.DOB}/>
-                            <LoginSummaryRow header="Registration status" value={state.RegistrationStatus}/>
+                            <LoginSummaryRow header="Nom" value={state.FirstName}/>
+                            <LoginSummaryRow header="Cognom" value={state.LastName}/>
+                            <LoginSummaryRow header="Estat del registre" value={state.RegistrationStatus}/>
                             <LoginSummaryRow header="Face Id" value={state.FaceId}/>
-                            <LoginSummaryRow header="Confidence" value={state.Confidence}/>
+                            <LoginSummaryRow header="Confiança" value={state.Confidence}/>
                         </tbody>
                     </table>
                 </div>

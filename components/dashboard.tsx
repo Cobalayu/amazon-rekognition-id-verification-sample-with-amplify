@@ -6,7 +6,7 @@ export const Dashboard = (props: PageProps) => {
         <div>
             <div>
                 <p>
-                    Aquesta aplicació de demostració mostra la verificació d'identitat facial construïda amb Amazon Rekognition.
+                    Aquesta aplicació de demostració mostra la verificació d identitat facial construïda amb Amazon Rekognition.
                 </p>
                 <h2>Registrar nou usuari</h2>
                 <Link href="/register-new-user">
