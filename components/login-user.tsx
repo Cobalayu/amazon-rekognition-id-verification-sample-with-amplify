@@ -146,6 +146,7 @@ export const LoginUser = (props: DashboardProps) => {
                             <LoginSummaryRow header="User Id" value={state.UserId}/>
                             <LoginSummaryRow header="Nom" value={state.FirstName}/>
                             <LoginSummaryRow header="Cognom" value={state.LastName}/>
+                            <LoginSummaryRow header="Data de naixement" value={state.DOB}/>
                             <LoginSummaryRow header="Estat del registre" value={state.RegistrationStatus}/>
                             <LoginSummaryRow header="Face Id" value={state.FaceId}/>
                             <LoginSummaryRow header="Confiança" value={state.Confidence}/>
