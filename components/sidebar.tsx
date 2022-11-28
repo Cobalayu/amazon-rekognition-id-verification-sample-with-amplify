@@ -29,23 +29,19 @@ class Sidebar extends Component {
 
     render() {
         const currState = this.state as SidebarState;
-        const collections = this.getMenuItem("Collections", currState.currentMenuItem, Box, '/collections');
-        const registerNewUser = this.getMenuItem("Register new user", currState.currentMenuItem, PersonBoundingBox, '/register-new-user');
-        const registerNewUserWithIdCard = this.getMenuItem("Register new user with ID card", currState.currentMenuItem, PersonBadge, '/register-new-user-with-idcard');
-        const updateUserPhoto = this.getMenuItem("Update user photo", currState.currentMenuItem, Camera2, '/update-user-photo');
-        const loginUser = this.getMenuItem("Login user", currState.currentMenuItem, Camera, '/login-user');
-        const browseUsers = this.getMenuItem("Browse users", currState.currentMenuItem, People, '/browse-users');
+        const collections = this.getMenuItem("Col·leccions", currState.currentMenuItem, Box, '/collections');
+        const registerNewUser = this.getMenuItem("Registrar nou usuari", currState.currentMenuItem, PersonBoundingBox, '/register-new-user');
+        const registerNewUserWithIdCard = this.getMenuItem("Registrar nou usuari amb ID card", currState.currentMenuItem, PersonBadge, '/register-new-user-with-idcard');
+        const updateUserPhoto = this.getMenuItem("Actualizar foto de usuari", currState.currentMenuItem, Camera2, '/update-user-photo');
+        const loginUser = this.getMenuItem("Identificar usuari", currState.currentMenuItem, Camera, '/login-user');
+        const browseUsers = this.getMenuItem("Veure usuaris", currState.currentMenuItem, People, '/browse-users');
 
         return (
             <nav id="sidebarMenu" className="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div className="position-sticky pt-3">
                     <ul className="nav flex-column">
-                        <SidebarItem {...collections} />
                         <SidebarItem {...registerNewUser} />
-                        <SidebarItem {...registerNewUserWithIdCard} />
-                        <SidebarItem {...updateUserPhoto} />
                         <SidebarItem {...loginUser} />
-                        <SidebarItem {...browseUsers} />
                     </ul>
                 </div>
             </nav>
