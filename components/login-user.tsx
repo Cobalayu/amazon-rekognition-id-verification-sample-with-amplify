@@ -44,6 +44,9 @@ const initialProps = {
     UserId: '',
 }
 
+const FACING_MODE_USER = "user";
+const FACING_MODE_ENVIRONMENT = "environment";
+
 const initialPropsBusy = {...JSON.parse(JSON.stringify(initialProps)), Busy: true};
 
 const LoginSummaryRow = (props: LoginSummaryRowData) => {
@@ -91,7 +94,7 @@ export const LoginUser = (props: DashboardProps) => {
     const videoConstraints = {
         width: 300,
         height: 169,
-        facingMode: "user"
+        facingMode: FACING_MODE_ENVIRONMENT
     };
 
     const [state, setState] = useState(initialProps as LoginPageProps);
@@ -146,6 +149,7 @@ export const LoginUser = (props: DashboardProps) => {
                             <LoginSummaryRow header="DOB" value={state.DOB}/>
                             <LoginSummaryRow header="Registration status" value={state.RegistrationStatus}/>
                             <LoginSummaryRow header="Face Id" value={state.FaceId}/>
+                            <LoginSummaryRow header="Confidence" value={state.Confidence}/>
                         </tbody>
                     </table>
                 </div>
