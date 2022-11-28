@@ -320,7 +320,10 @@ export const RegisterNewUser = (props: DashboardProps) => {
                     ref={webcamRef}
                     screenshotFormat="image/jpeg"
                     width={videoConstraints.width}
-                    videoConstraints={videoConstraints}
+                    videoConstraints={{
+                        ...videoConstraints,
+                        facingMode
+                    }}                    
                 />
                 <div
                     className={`${state.screenshot ? "d-block" : "d-none"}`}
