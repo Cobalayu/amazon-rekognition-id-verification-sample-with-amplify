@@ -112,7 +112,7 @@ async function submitUser(props: RegNewUserProps, dispatch: Dispatch<RegUserActi
 
     try {
         if (!validateFields(props)) {
-            dispatch({ type: 'alertMessage', payload: 'Please fill in all fields; *and* please ensure that you\'ve supplied a selfie image.' });
+            dispatch({ type: 'alertMessage', payload: 'Si us plau, ompliu tots els camps. Assegureu-vos que heu subministrat una imatge facial.' });
             return;
         }
 
@@ -209,27 +209,26 @@ const SubmissionSummary = (props: SubmissionSummaryProps) => {
     return (
         <div className={`${userProps.status == 'success' ? 'd-block' : 'd-none'}`}>
             <h2 className="text-success">
-                Successfully registered user
+                Usuari registrat correctament
             </h2>
             <table className="table table-bordered" style={{ marginTop: 10 }}>
                 <tbody>
-                    <SummaryRow header="User Id" value={userProps.userid} />
-                    <SummaryRow header="First name" value={userProps.firstname} />
-                    <SummaryRow header="Last name" value={userProps.lastname} />
-                    <SummaryRow header="DOB" value={userProps.dob} />
+                    <SummaryRow header="Id Usuari" value={userProps.userid} />
+                    <SummaryRow header="Nom" value={userProps.firstname} />
+                    <SummaryRow header="Cognom" value={userProps.lastname} />
                 </tbody>
             </table>
             <div>
                 <Link href="/login-user">
                     <a className="btn btn-info">
-                        Try logging in
+                        Provar Identificació
                     </a>
                 </Link>
                 <button
                     className="btn btn-outline-secondary"
                     onClick={reset}
                     style={{ marginLeft: 5 }}>
-                    Register another user
+                    Registrar un altre usuari
                 </button>
             </div>
         </div>
@@ -322,18 +321,18 @@ export const RegisterNewUser = (props: DashboardProps) => {
                 <button
                     className={`btn btn-outline-primary ${state.screenshot ? "d-none" : "d-inline"}`}
                     onClick={capture}>
-                    Capture photo
+                    Captura de Foto
                 </button>
                 <button
                     className={`btn btn-outline-primary ${state.screenshot ? "d-none" : "d-inline"}`}
                     style={{marginLeft: 10}}
                     onClick={uploadImg}>
-                    Upload photo
+                    Pujar Foto
                 </button>
                 <button
                     className={`btn btn-info ${state.screenshot ? "d-inline" : "d-none"}`}
                     onClick={() => dispatch({type: 'screenshot', payload: ''})}>
-                    Retake pic
+                    Tornar a fer Foto
                 </button>
             </div>
             <div className={`${state.status != 'success' ? 'd-block' : 'd-none'}`}>

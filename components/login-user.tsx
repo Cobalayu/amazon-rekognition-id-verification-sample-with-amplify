@@ -117,16 +117,15 @@ export const LoginUser = (props: DashboardProps) => {
     const handleClick = useCallback(() => {
         setFacingMode(
           prevState =>
-            prevState === FACING_MODE_USER
-              ? FACING_MODE_ENVIRONMENT
-              : FACING_MODE_USER
+            prevState === FACING_MODE_ENVIRONMENT
+              ? FACING_MODE_USER
+              : FACING_MODE_ENVIRONMENT
         );
     }, []);
 
     return (
         <div>
             <div>
-                <button onClick={handleClick}>Canviar Càmera</button>
                 <Webcam
                     audio={false}
                     height={videoConstraints.height}
@@ -143,6 +142,9 @@ export const LoginUser = (props: DashboardProps) => {
                     {state.Busy ? 'Espereu...': 'Login'}
                 </button>
             </div>
+            <div>
+                <button onClick={handleClick}>Canviar Càmera</button>            
+            </div>
             <div className={`${state.Success ? "d-none" : "d-block"}`}>
                 <h2 className="text-danger">Login failed</h2>
             </div>
@@ -155,7 +157,7 @@ export const LoginUser = (props: DashboardProps) => {
                     </div>
                     <table className="table table-bordered" style={{marginTop: 10}}>
                         <tbody>
-                            <LoginSummaryRow header="User Id" value={state.UserId}/>
+                            <LoginSummaryRow header="Id Usuari" value={state.UserId}/>
                             <LoginSummaryRow header="Nom" value={state.FirstName}/>
                             <LoginSummaryRow header="Cognom" value={state.LastName}/>
                             <LoginSummaryRow header="Estat del registre" value={state.RegistrationStatus}/>
