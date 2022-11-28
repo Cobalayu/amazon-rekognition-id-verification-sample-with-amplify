@@ -91,6 +91,7 @@ async function doLogin(imageBytesb64: string, setState: Dispatch<SetStateAction<
 }
 
 export const LoginUser = (props: DashboardProps) => {
+
     const videoConstraints = {
         width: 300,
         height: 169,
@@ -111,6 +112,16 @@ export const LoginUser = (props: DashboardProps) => {
         },
         [webcamRef]
     );
+
+    const [facingMode, setFacingMode] = useState(FACING_MODE_ENVIRONMENT);
+    const handleClick = useCallback(() => {
+        setFacingMode(
+          prevState =>
+            prevState === FACING_MODE_USER
+              ? FACING_MODE_ENVIRONMENT
+              : FACING_MODE_USER
+        );
+    }, []);
 
     return (
         <div>
@@ -148,7 +159,7 @@ export const LoginUser = (props: DashboardProps) => {
                             <LoginSummaryRow header="Cognom" value={state.LastName}/>
                             <LoginSummaryRow header="Estat del registre" value={state.RegistrationStatus}/>
                             <LoginSummaryRow header="Face Id" value={state.FaceId}/>
-                            <LoginSummaryRow header="Confiança" value={state.Confidence.toString()||'0'}/>
+                            <LoginSummaryRow header="Confiança" value={( state.Confidence ? state.Confidence : 0 ).toString()}/>
                         </tbody>
                     </table>
                 </div>
