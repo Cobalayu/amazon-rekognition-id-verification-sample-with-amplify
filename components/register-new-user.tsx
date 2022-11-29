@@ -344,6 +344,12 @@ export const RegisterNewUser = (props: DashboardProps) => {
                     Pujar Foto
                 </button>
                 <button
+                    className={`btn btn-outline-primary ${state.screenshot ? "d-none" : "d-inline"}`}
+                    style={{marginLeft: 10}}
+                    onClick={switchCam}>
+                    Canviar Càmera
+                </button>
+                <button
                     className={`btn btn-info ${state.screenshot ? "d-inline" : "d-none"}`}
                     onClick={() => dispatch({type: 'screenshot', payload: ''})}>
                     Tornar a fer Foto
@@ -359,10 +365,7 @@ export const RegisterNewUser = (props: DashboardProps) => {
                 onClick={() => submitUser(state, dispatch)}>
                 {state.busy ? 'Please wait...': 'Registrar'}
             </button>
-            </div>
-            <div>
-                <button onClick={switchCam}>Canviar Càmera</button>            
-            </div>            
+            </div>         
             <SubmissionSummary {...submissionSummaryProps} />
         </div>
     );

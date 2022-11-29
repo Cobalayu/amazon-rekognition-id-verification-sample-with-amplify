@@ -145,11 +145,14 @@ export const LoginUser = (props: DashboardProps) => {
                     {state.Busy ? 'Espereu...': 'Login'}
                 </button>
             </div>
-            <div>
-                <button onClick={switchCam}>Canviar Càmera</button>            
-            </div>
+            <button
+                    className={`btn btn-outline-primary "d-inline"}`}
+                    style={{marginLeft: 10}}
+                    onClick={switchCam}>
+                    Canviar Càmera
+            </button>
             <div className={`${state.Success ? "d-none" : "d-block"}`}>
-                <h2 className="text-danger">Login failed</h2>
+                <h2 className="text-danger">No Identificat</h2>
             </div>
             <div className={`${state.UserId ? "d-block" : "d-none"}`}>
                 <hr />
