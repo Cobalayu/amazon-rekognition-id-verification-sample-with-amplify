@@ -147,7 +147,6 @@ export const LoginUser = (props: DashboardProps) => {
             </div>
             <button
                     className={`btn btn-outline-primary "d-inline"}`}
-                    style={{marginLeft: 10}}
                     onClick={switchCam}>
                     Canviar Càmera
             </button>
